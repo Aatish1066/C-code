@@ -1,1 +1,17 @@
+# include <stdio.h>
+int main(){
+    int iReal1,iImaginary1;
+    int iReal2,iImaginary2;
+    scanf("%d",&iReal1);
+    scanf("%d",&iImaginary1);
+    scanf("%d",&iReal2);
+    scanf("%d",&iImaginary2);
+    if (iReal1<=1000&&iReal2<=1000&&iImaginary1<=1000&&iImaginary2<=1000){
+        printf("%d\n",(iReal1+iReal2));
+        printf("%d\n",(iImaginary1+iImaginary2));
+        printf("%d\n",(iReal1-iReal2));
+        printf("%d\n",(iImaginary1-iImaginary2));
+    }
+    else printf("error");
 
+}
