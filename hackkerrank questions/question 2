@@ -1,0 +1,92 @@
+#include <iostream>
+using namespace std;
+
+class BankAccount {
+private:
+
+    string name, accountType;
+
+    int accountnumber, balance;
+
+public:
+
+    void setInput(string n, int accno, string accTy, int bala) {
+
+        name = n, accountnumber = accno, accountType = accTy, balance = bala;
+
+    }
+
+    int setDeposit(int amount) {
+
+        if (amount > 0) {
+            balance = balance+ amount;
+
+            return balance;
+
+        }
+
+        else {
+            balance = -1;
+
+            return -1;
+
+        }
+
+    }
+
+    int getDeposit(int amount) {
+
+        if (amount < balance) {
+            balance =balance- amount;
+
+            return balance;
+
+        }
+
+        else {
+
+            balance = -1;
+
+            return -1;
+
+        }
+
+    }
+
+    void display() {
+
+        cout << accountnumber << endl;
+
+        cout << balance << endl;
+
+    }
+
+};
+
+int main() {
+    BankAccount obj[2];
+    int c = 0, accno, bala, amount;
+
+    string n, type;
+    if (c<10){
+
+    while (c < 2) {
+        cin >> n;
+        cin >> accno;
+        cin >> type;
+        cin >> bala;
+        if (accno<=9999){
+        obj[c].setInput(n, accno, type, bala);
+        cin >> amount;
+        obj[c].setDeposit(amount);
+        cin >> amount;
+        obj[c].getDeposit(amount);
+        obj[c].display();
+        c++;
+    }
+        else printf("error");
+
+    }}
+    else printf("error");
+    return 0;
+}
