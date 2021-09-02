@@ -1,0 +1,57 @@
+#include <iostream>
+using namespace std;
+class employee{
+private:
+    int Rank=0;
+    string Name;
+    float Sal1 =0, Sal2 =0,Sal3 =0;
+public:
+    void input(int choice,int rank, string name,float sal1,float sal2,float sal3){
+        if (choice==1){
+            Rank=rank;
+            Name=name;
+            Sal1=sal1;
+            Sal2=sal2;
+            Sal3=sal3;
+
+        }
+
+    }
+    void output(){
+        cout<<Name<<endl;
+        cout<<Rank<<endl;
+        cout<<Sal1<<endl;
+        cout<<Sal2<<endl;
+        cout<<Sal3<<endl;
+        cout<<Sal1+Sal2-Sal3<<endl;
+    }
+    void output2(){
+        Sal1=0.25*Sal1+Sal1;
+        Sal2=0.25*Sal2+Sal2;
+        Sal3=0.25*Sal3+Sal3;
+        cout<<Name<<endl;
+        cout<<Rank<<endl;
+        cout<<Sal1<<endl;
+        cout<<Sal2<<endl;
+        cout<<Sal3<<endl;
+        cout<<Sal1+Sal2-Sal3<<endl;
+
+    }
+};
+int main(){
+    int choice, rank;
+    string name;
+    float sal1, sal2, sal3;
+    employee emp;
+    cin>>choice;
+    cin>>rank;
+    cin>>name;
+    cin>>sal1;
+    cin>>sal2;
+    cin>>sal3;
+    emp.input(choice,rank,name,sal1,sal2,sal3);
+    cin>>choice;
+    if(choice==2){
+    emp.output();
+    emp.output2();}
+}
